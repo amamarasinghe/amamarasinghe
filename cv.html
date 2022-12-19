@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Generate PDF</title>
+    
+</head>
+<body>
+   <div class="container">
+      <button id="pdfButton"><b>Click here to Download the resume</b></button>
+      <div class="card" id="generatePDF">
+<form>
+    <h2>Ama Prabuddhika</h2>
+    <h4>Software Engineer</h4>
+<pre>Full Name:</pre><input type="text"value="Marasinghe Mudiyanselage Ama Prabuddhika" size="60"><br>    
+<pre>Name with Initials:</pre><input type="text"value="M.M.A. Prabuddhika" size="60"><br>
+<pre>Adress:</pre><input type="text"value="No.104,Aluth walawwa road,Kahagolla,Diyatalawa" size="60"><br>
+<pre>Date of birth:</pre><input type="text"value="2001.02.20" size="60"><br>
+<pre>Telephone:</pre><input type="text"value="0755387377" size="60"><br>
+<pre>Email:</pre><input type="text"value="amamarasinghe45@gmail.com" size="60"><br>
+<pre>facebook id:</pre><input type="text"value="Ama Marasinghe" size="60"><br>
+<pre>Gender:</pre><input type="text"value="Female" size="60"><br>
+<pre>Nic:</pre><input type="text"value="2000155100590" size="60"><br>
+<br>
+<h3>Education</h3>
+<ul>
+<li>Passed GCE O/L in 2017</li><br>
+<ul>
+<li>Mathematics -<b>A</b></li>
+<li>English-<b>A</b></li>
+<li>Sinhala Language-<b>A</b></li>
+<li>Science-<b>A</b></li>
+<li>Information Communication Technology-<b>A</b></li>
+<li>Buddhisam-<b>A</b></li>
+<li>History-<b>A</b></li>
+<li>Drama and Theatre-<b>A</b></li>
+<li>Tamil-<b>A</b></li><br>
+
+</ul>
+<li>Passed GCE A/L in 2020.</li><br>
+<ul>
+<li>Combined mathematics-<b>S</b></li>
+<li>Chemistry-<b>C</b></li>
+<li>Physics-<b>S</b></li>
+</ul>
+</ul>
+<br>
+<h3>Skills</h3>
+<ul>
+<li>Java</li>
+<li>C++</li>
+<li>C</li>
+<li>JavaScript</li>
+<li>MySQl</li>
+<li>Html,CSS<li>
+<li>PHP</li>
+<li>PhotoShop</li>
+</ul>
+</form>
+      </div>
+   </div>
+   <script>
+      var button = document.getElementById("pdfButton");
+      var makepdf = document.getElementById("generatePDF");
+      button.addEventListener("click", function () {
+         var mywindow = window.open("", "PRINT", "height=600,width=600");
+         mywindow.document.write(makepdf.innerHTML);
+ var today = new Date();
+  var day = today.getDay();
+  var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date+' '+time;
+     mywindow.document.write( " Day  :- "+ date+"<br>Time :-"+time  )
+if(today.getHours()<11)
+{
+ mywindow.document.write("Am")
+}
+else
+{
+ mywindow.document.write("Pm")
+}
+         mywindow.document.close();
+         mywindow.focus();
+         mywindow.print();
+         return true;
+      });
+   </script>
+
+</body>
+</html>
